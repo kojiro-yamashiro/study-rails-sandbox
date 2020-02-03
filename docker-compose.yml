@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+  datastore:
+    image: busybox
+    volumes:
+      - mysql2-data:/var/log/mysql
+      - redis-data:/data
+
+  db:
+    build: ./docker/mysql
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: study_rails_sandbox_development
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ${PRIVATE_PROJECT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${PRIVATE_PROJECT_PASSWORD}
+    ports:
+      - "13306:3306"
+    volumes:
+      - ./docker/mysql/conf.d:/mysql/conf.d
+      - datastore
+
+  redis:
+    image: redis:alpine
+    ports:
+      - '6379:6379'
+    volumes:
+      - datastore
+    command: redis-server
+
+volumes:
+  mysql2-data:
+    driver: local
+  redis-data:
+    driver: local
