@@ -61,5 +61,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # session
-  config.session_store :redis_store, servers: 'redis://localhost:6379/0/session', expire_in: 30.minutes
+  config.session_store :redis_store, servers: "redis://${REDIS}:6379/0/session", expire_in: 30.minutes
 end
