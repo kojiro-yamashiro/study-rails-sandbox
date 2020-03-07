@@ -1,4 +1,5 @@
 h1 タスクの詳細
+- task = @task
 
 .nav.justify-content-end
   = link_to '一覧', tasks_path, class: 'nav-link'
@@ -9,21 +10,22 @@ table.table.table-hover
       th
         = Task.human_attribute_name(:id)
       td
-        = @task.id
+        = task.id
     tr
       th
         = Task.human_attribute_name(:name)
       td
-        = @task.name
+        = task.name
     tr
       th
         = Task.human_attribute_name(:description)
       td
-        = simple_format(h(@task.description), {}, sanitaize: false, wrapper_tag: 'div')
+        = simple_format(h(task.description), {}, sanitaize: false, wrapper_tag: 'div')
     tr
       th
         = Task.human_attribute_name(:created_at)
       td
-        = @task.created_at
+        = task.created_at
 
-= link_to '編集', edit_task_path(@task), class: 'btn btn-primary mr-3'
+= link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+= link_to '削除', task_path(task), method: :delete, data: { confirm: "タスク「#{task.name}」を削除います。よろしいいですか。"}, class: 'btn btn-danger'
