@@ -10,6 +10,10 @@ table.table.table-hover
         = Task.human_attribute_name(:name)
       th
         = Task.human_attribute_name(:created_at)
+      th
+        |
+      th
+        |
   tbody
     - @tasks.each do |task|
       tr
@@ -18,4 +22,6 @@ table.table.table-hover
         td
           = task.created_at
         td
-          = link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+          = link_to '編集', edit_task_path(task), class: 'btn btn-primary'
+        td
+          = link_to '削除', task_path(task), method: :delete, data: { confirm: "タスク「#{task.name}」を削除います。よろしいいですか。"}, class: 'btn btn-danger'
