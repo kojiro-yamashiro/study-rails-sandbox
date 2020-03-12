@@ -1,8 +1,27 @@
-= form_with model: task, local: true do |f|
+= form_with model: task, local: true, id: 'form' do |f|
   .form-group
     = f.label :name
-    = f.text_field :name, class: 'form-control', id: 'task_name'
+    = f.text_field :name, class: 'form-control', id: 'task_name', required: true
   .form-group
     = f.label :description
-    = f.text_area :description, row: 5, class: 'form-control', id: 'task_description'
-  = f.submit nil, class: 'btn btn-primary'
+    = f.text_area :description, row: 5, class: 'form-control', id: 'task_description', required: true
+  = f.submit nil, class: 'btn btn-primary', id: 'submit_btn', disabled: true
+
+
+javascript:
+  // Turbolinksを利用する関係もありletで宣言すると再定義エラーになってしまう。
+  var form = document.getElementById('form');
+  var submit = document.getElementById('submit_btn');
+
+  form.addEventListener('turbolinks:load', checkValid);
+  form.addEventListener('input', checkValid);
+
+  // checkValidityメソッドはform要素に対して実行すると、
+  // その時のフォーム全体の入力状況を見てすべてバリデートが通っていればtrue、そうでなければfalseを返します。
+  function checkValid(e) {
+    if (form.checkValidity()) {
+      submit.removeAttribute('disabled');
+      return;
+    }
+    submit.setAttribute('disabled', 'disabled');
+  }
