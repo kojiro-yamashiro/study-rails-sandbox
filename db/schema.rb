@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_133659) do
+ActiveRecord::Schema.define(version: 2020_03_17_141042) do
 
   create_table "dreams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "title", null: false, comment: "夢のタイトル"
-    t.text "description", null: false, comment: "詳しい夢の説明"
+    t.text "description", null: false, comment: "詳しい説明"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
