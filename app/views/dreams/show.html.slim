@@ -1,0 +1,25 @@
+h1 夢日記の詳細
+- dream = @dream
+
+table.table.table-hover
+  tbody
+    tr
+      th
+        = dream.human_attribute_name(:id)
+      td
+        = dream.id
+    tr
+      th
+        = dream.human_attribute_name(:title)
+      td
+        = dream.name
+    tr
+      th
+        = dream.human_attribute_name(:description)
+      td
+        = simple_format(h(dream.description), {}, sanitaize: false, wrapper_tag: 'div')
+    tr
+      th
+        = dream.human_attribute_name(:created_at)
+      td
+        = dream.created_at

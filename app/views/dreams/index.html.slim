@@ -1,0 +1,21 @@
+h1 夢日記一覧
+
+.mb-3
+table.table.table-hover
+  thead.thead-defalut
+    tr
+      th
+        = Dream.human_attribute_name(:title)
+      th
+        = Dream.human_attribute_name(:created_at)
+      th
+        |
+      th
+        |
+  tbody
+    - @dreams.each do |dream|
+      tr
+        td
+          = link_to dream.title, dreams_path(dream)
+        td
+          = dream.created_at
