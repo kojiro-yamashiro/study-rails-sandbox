@@ -15,7 +15,7 @@ class DreamsController < ApplicationController
   end
 
   def show
-    @dream = Dream.where(id: params[:id])
+    @dream = Dream.find(params[:id])
   end
 
   private
