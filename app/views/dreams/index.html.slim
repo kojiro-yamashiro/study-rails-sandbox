@@ -16,6 +16,6 @@ table.table.table-hover
     - @dreams.each do |dream|
       tr
         td
-          = link_to dream.title, "/dreams/#{dream.id}"
+          = link_to dream.title, show_derams_path(dream)
         td
           = dream.created_at
