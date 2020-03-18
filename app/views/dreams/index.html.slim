@@ -4,18 +4,14 @@ h1 夢日記一覧
 table.table.table-hover
   thead.thead-defalut
     tr
+      th= Dream.human_attribute_name(:title)
+      th= Dream.human_attribute_name(:created_at)
       th
-        = Dream.human_attribute_name(:title)
       th
-        = Dream.human_attribute_name(:created_at)
-      th
-        |
-      th
-        |
   tbody
     - @dreams.each do |dream|
       tr
-        td
-          = link_to dream.title, show_dreams_path(dream)
-        td
-          = dream.created_at
+        td= link_to dream.title, show_dreams_path(dream)
+        td= dream.created_at
+
+= link_to '新規登録', dreams_new_path, class: 'btn btn-primary'

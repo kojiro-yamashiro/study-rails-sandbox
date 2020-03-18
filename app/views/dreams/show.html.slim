@@ -7,22 +7,14 @@ h1 夢日記の詳細
 table.table.table-hover
   tbody
     tr
-      th
-        = Dream.human_attribute_name(:id)
-      td
-        = dream.id
+      th= Dream.human_attribute_name(:id)
+      td= dream.id
     tr
-      th
-        = Dream.human_attribute_name(:title)
-      td
-        = dream.title
+      th= Dream.human_attribute_name(:title)
+      td= dream.title
     tr
-      th
-        = Dream.human_attribute_name(:description)
-      td
-        = simple_format(h(dream.description), {}, sanitaize: false, wrapper_tag: 'div')
+      th= Dream.human_attribute_name(:description)
+      td= simple_format(h(dream.description), {}, sanitaize: false, wrapper_tag: 'div')
     tr
-      th
-        = Dream.human_attribute_name(:created_at)
-      td
-        = dream.created_at
+      th= Dream.human_attribute_name(:created_at)
+      td= dream.created_at
