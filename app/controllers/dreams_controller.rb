@@ -18,6 +18,13 @@ class DreamsController < ApplicationController
     @dream = Dream.find(params[:id])
   end
 
+  def edit
+    @dream = Dream.find(params[:id])
+  end
+
+  def update
+  end
+
   private
 
   def dream_params

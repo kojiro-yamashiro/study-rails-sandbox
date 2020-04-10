@@ -18,3 +18,5 @@ table.table.table-hover
     tr
       th= Dream.human_attribute_name(:created_at)
       td= dream.created_at
+
+= link_to '編集', edit_dream_path(dream), class: 'btn btn-primary mr-3'

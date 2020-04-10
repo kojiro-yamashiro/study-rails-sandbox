@@ -11,7 +11,7 @@ table.table.table-hover
   tbody
     - @dreams.each do |dream|
       tr
-        td= link_to dream.title, show_dreams_path(dream)
+        td= link_to dream.title, dream_path(dream)
         td= dream.created_at
 
-= link_to '新規登録', dreams_new_path, class: 'btn btn-primary'
+= link_to '新規登録', dreams_path, class: 'btn btn-primary'
