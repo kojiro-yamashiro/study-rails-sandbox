@@ -23,6 +23,10 @@ class DreamsController < ApplicationController
   end
 
   def update
+    logger.info 'hello world'
+    dream = Dream.find(params[:id])
+    dream.update! dream_params
+    redirect_to dreams_url, notice: '夢日記を更新しました。'
   end
 
   private

@@ -3,7 +3,7 @@ h1 🌛夢の新規登録
 .nav.justify-content-end
   = link_to '一覧', dreams_path, class: 'nav-link'
 
-= form_with url: dreams_path, model: @dream, local: true, id: 'form' do |f|
+= form_with model: @dream, local: true, id: 'form' do |f|
   .form-group
     = f.label :title
     = f.text_field :title, class: 'form-control', id: 'dream_title', required: true
