@@ -3,13 +3,4 @@ h1 👻夢の更新画面
 .nav.justify-content-end
   = link_to '一覧', dreams_path, class: 'nav-link'
 
-/ url: 属性を指定しないとroutes解決ができなかった。でも、resourcesで指定するとこの書き方でも解決できた。今のところ謎
-/ = form_with url: dreams_path, model: @dream, local: true, id: 'form' do |f|
-= form_with model: @dream, local: true, id: 'form' do |f|
-  .form-group
-    = f.label :title
-    = f.text_field :title, class: 'form-control', id: 'dream_title', required: true
-  .form-group
-    = f.label :description
-    = f.text_area :description, row: 5, class: 'form-control', id: 'task_description', required: true
-  = f.submit nil, class: 'btn btn-primary', id: 'submit_btn'
+== render 'form', dream: @dream
