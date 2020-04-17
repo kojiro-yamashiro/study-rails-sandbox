@@ -12,7 +12,7 @@ table.table.table-hover
     - @dreams.each do |dream|
       tr
         / 詳細ページへの遷移なんですが、`dream_path`だとなぜできない。resourcesだとこれでいけるのに。。
-        td= link_to dream.title, dream_path(dream)
+        td= link_to dream.title, dream
         td= dream.created_at
 
 = link_to '新規登録', new_dream_path, class: 'btn btn-primary'
