@@ -29,6 +29,13 @@ class DreamsController < ApplicationController
     redirect_to dreams_url, notice: '夢日記を更新しました。'
   end
 
+  def destory
+    logger.info "削除日: #{params[:delete_at]}"
+    dream = Dream.find_by(id: params[:id])
+    dream.destroy!
+    redirect_to dreams_url, notice: '夢日記を削除しました。'
+  end
+
   private
 
   def dream_params

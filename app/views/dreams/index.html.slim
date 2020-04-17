@@ -14,5 +14,7 @@ table.table.table-hover
         / 詳細ページへの遷移なんですが、`dream_path`だとなぜできない。resourcesだとこれでいけるのに。。
         td= link_to dream.title, dream
         td= dream.created_at
+        td= link_to '編集', edit_dream_path(dream), class: 'btn btn-primary'
+        td= link_to '削除', dream_path(dream, delete_at: "#{Date.today}"), method: :delete, data: { confirm: "夢日記 #{dream.title} を削除します。よろしいですか。"}, class: 'btn btn-danger'
 
 = link_to '新規登録', new_dream_path, class: 'btn btn-primary'
