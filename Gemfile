@@ -29,7 +29,6 @@ gem 'redis-rails', '~> 5.0', '>= 5.0.2'
 
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
