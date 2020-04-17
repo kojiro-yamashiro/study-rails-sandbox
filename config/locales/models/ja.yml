@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       task: タスク
+      dream: 夢
     attributes:
       user:
         id: ID
@@ -16,4 +17,10 @@ ja:
         created_at: 登録日時
         updated_at: 更新日時
         name: 名称
+        description: 詳しい説明
+      dream:
+        id: ID
+        created_at: 登録日時
+        updated_at: 更新日時
+        title: 夢のタイトル
         description: 詳しい説明
