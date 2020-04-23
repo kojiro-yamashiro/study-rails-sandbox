@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_23_095743) do
+ActiveRecord::Schema.define(version: 2020_04_23_101801) do
 
   create_table "dreams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "title", null: false, comment: "夢のタイトル"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_04_23_095743) do
     t.text "description", comment: "詳しい説明"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_tasks_on_name", unique: true
   end
 
 end
