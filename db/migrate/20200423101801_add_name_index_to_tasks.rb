@@ -3,6 +3,6 @@ class AddNameIndexToTasks < ActiveRecord::Migration[6.0]
     add_index :tasks, :name, unique: true
   end
   def down
-    add_index :tasks, :name
+    remove_index :tasks, :name
   end
 end
