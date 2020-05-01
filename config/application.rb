@@ -24,6 +24,10 @@ module StudyRailsSandbox
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    # app配下に独自のクラスを追加した際にはこちらに追加することで自動的に読み込みすることができる。
+    # rails5 では以下がなくても自動で読み込まれたようですが、rails6ではconfig.autoload_pathsで調整する必要が
+    # config.autoload_paths += %W(#{config.root}/hogehoge)
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
