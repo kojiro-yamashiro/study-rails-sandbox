@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_111320) do
+ActiveRecord::Schema.define(version: 2020_05_01_114958) do
 
   create_table "dreams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "title", null: false, comment: "夢のタイトル"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_111320) do
     t.string "password_digest", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
