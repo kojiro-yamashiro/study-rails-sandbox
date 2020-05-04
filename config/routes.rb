@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   namespace :admin do
     get  'users',           to: 'users#index'
     get  'users/new',       to: 'users#new'
-    post 'users/create',    to: 'users#create'
-    get  'users/:id',       to: 'users#show', as: :admin_user_detail
+    post 'users',           to: 'users#create', as: :create_user
+    get  'users/:id',       to: 'users#show', as: :user_detail
   end
 
   root to: 'tasks#index'

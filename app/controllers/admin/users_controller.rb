@@ -1,7 +1,6 @@
 class Admin::UsersController < ApplicationController
 
   def new
-    # アカウント登録の新規
     @user = User.new
   end
 
@@ -11,6 +10,7 @@ class Admin::UsersController < ApplicationController
     if @user.save
       redirect_to admin_users_path, notice: "ユーザー「#{@user.name}」を登録しました。"
     else
+      logger.info @user.errors&.full_messages
       render :new
     end
   end
