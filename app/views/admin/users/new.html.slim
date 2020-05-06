@@ -1,6 +1,6 @@
 h1 = title
 
-= form_with url: admin_create_user_path, local: :true do |f|
+= form_with url: admin_create_user_path, scope: :user, local: :true do |f|
   .form-group
     = f.label :name, '名前'
     = f.text_field :name, class: 'form-control'
