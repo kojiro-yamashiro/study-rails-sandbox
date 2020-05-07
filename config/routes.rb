@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get  'users/new',       to: 'users#new'
     post 'users',           to: 'users#create', as: :create_user
     get  'users/:id',       to: 'users#show', as: :user_detail
+    get  'users/:id/edit',  to: 'users#edit', as: :user_edit
     delete 'users/:id',     to: 'users#destroy', as: :user_destroy
   end
 

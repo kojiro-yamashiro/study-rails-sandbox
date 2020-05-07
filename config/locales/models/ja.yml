@@ -12,6 +12,10 @@ ja:
         name: 姓名
         address: 住所
         age: 年齢
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認）
+        admin: 管理者権限
       task:
         id: ID
         created_at: 登録日時
